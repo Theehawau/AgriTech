@@ -2,10 +2,8 @@
 Obtain Land Elevation Data Using USGS LIDAR
 
 AgriTech is a python module that domain experts and data scientists can use to fetch, visualise, and transform publicly available satellite and LIDAR data. 
-It uses PDAL, GDAL, OGR
+It uses PDAL, GDAL, OGR, Shapely
 
-### Runtime 
-Python 3
 ### Installation
 ```cli
 git clone https://github.com/Theehawau/AgriTech
@@ -13,11 +11,20 @@ cd AgriTech
 pip -r requirements.txt
 ```
 ### Features
-* [Get Bounds]()
+* [filename.txt](../main/filename.txt) : list of regions available in amazon bucket
+* [data.csv](../main/data.csv) : table of region name, url to data on amazon bucket, region bounds, region polygon.
+* [metadata.csv](../main/metadata.csv) : table  of region name, url to data on amazon bucket, bounds.
+* [read_file.json](../main/read_file.json) :pipeline skeleton json file
+* [GetBounds](../main/GetBounds.py)
 > This script contains a class that can obtain the bounds to a region, link to the region point cloud data from a file of region names.
-* [Read]()
-> This script contains a class with attributes to check given region validity, generate pipeline from give data, run pipeline to obtain tiff file,shape file and geojson file
-* [Visualize]()
+* [ReadData](ReadData.py)
+> This script contains functions to  generate pipeline from give data, run pipeline to obtain tiff file,generate shape file and  generate dimensions geopandas dataframe 
+* [UpdateMetaData](ReadData.py)
+> This script contains functions to  generate pipeline from give data, run pipeline to obtain tiff file,generate shape file and  generate dimensions geopandas dataframe 
+* [GetDimensions](../main/GetDimension.py)
+> This script contains a class with attributes to validate bounds, create and run pipeline, generate shape file and dimension geopandas
+> The attributes need to be followed step wise [see example](../main/notebooks/GetDimension.ipynb) 
+* [Visualize](../main/visualize.py)
 > This script contains functions for visualizing the data
 
 ### Usage
@@ -34,15 +41,6 @@ getbounds.get_region_bounds()
 ##To save list of dictionary with region, bound, location in metadata.csv
 getbounds.save_data('metadata.csv')
 ```
-Other Usage samples can be found in this [notebook]()
-#### Read
-```python
-import read
-##Initialize module with bounds, region
-rpd = Read_Point_Data('[-15730544, 10937407, -19027, -15691854, 10976097, 19663]','AK_Coastal_2009')
-
-```
-Other Usage samples can be found in this [notebook]()
 #### Visualize
 ```python
 ## Import all functions in module
@@ -50,6 +48,5 @@ from visualize import *
 ##Plot heatmap from shape file with elevation as legend
 heatmap('shp/iowa.shp')
 ```
-Other Usage samples can be found in this [notebook]()
-
+Other Usage samples and examples can be found in [notebooks](../main/notebooks)
 
