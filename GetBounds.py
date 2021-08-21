@@ -1,8 +1,9 @@
 import pandas as pd
 import json
 import requests
-import sys
 import csv
+import ast
+from shapely.geometry import Polygon
 
 class get_bounds_region:
     """ """
@@ -40,6 +41,12 @@ class get_bounds_region:
                 continue
         print('Successful')
         
+    def get_polygon(self, bounds:list):
+        if len(bounds) == 6:
+            MINX, MINY, MAXX, MAXY = [bounds[0],bounds[1],bounds[3],bounds[4]]
+        polygon = Polygon(((MINX, MINY), (MINX, MAXY), (MAXX, MAXY), (MAXX, MINY), (MINX, MINY)))
+        return polygon
+    
     def save_data(self, filename:str = 'metadata.csv') -> None:
         """
         This function saves the dict as a csv file
@@ -60,9 +67,5 @@ class get_bounds_region:
         print('File saved successfully')    
 
         
-if __init__ == '__main__':
-    get = get_bounds_region('filename.txt')
-    get.get_region_to_location()
-    get.get_region_bounds()
-    get.save_data()
+
     
