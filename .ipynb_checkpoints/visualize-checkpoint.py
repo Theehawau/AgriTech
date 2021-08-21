@@ -5,13 +5,14 @@ from scipy.interpolate import griddata
 import numpy as np
 def heatmap(shpfile:str, nodata_value:int = -9999)-> None:
     """
+    creates a heatmap of the region and its elevation
     Parameters
     ----------
-    shpfile:str :path to shapefile
-    none_value:int :value used to represent nodata values in point cloud data, defaults to -9999
-    Returns
-    -------
-    None
+    shpfile : str :path to shapefile
+        
+    nodata_value:int :
+         (Default value = -9999)
+    
     """
 #     read shape file 
     geo_df = gpd.read_file(shpfile)
@@ -26,13 +27,15 @@ def heatmap(shpfile:str, nodata_value:int = -9999)-> None:
     
 def map3d(shpfile:str, nodata_value:int = -9999)-> None:
     """
+    creates a 3d map of the region latitude, longitude and elevation
+
     Parameters
     ----------
-    shpfile:str :path to shapefile
-    none_value:int :value used to represent nodata values in point cloud data, defaults to -9999
-    Returns
-    -------
-    None
+    shpfile : str :path to shapefile
+        
+    nodata_value:int :
+         (Default value = -9999)
+
     """
     #     read shape file 
     geo_df = gpd.read_file(shpfile)
