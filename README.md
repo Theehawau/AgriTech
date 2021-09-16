@@ -1,8 +1,20 @@
 # AgriTech
-Obtain Land Elevation Data Using USGS LIDAR
 
-AgriTech is a python module that domain experts and data scientists can use to fetch, visualise, and transform publicly available satellite and LIDAR data. 
-It uses PDAL, GDAL, OGR, Shapely
+[![Issues][issues-shield]][issues-url]
+
+![workflow](https://github.com/Theehawau/AgriTech/actions/workflows/cml.yml/badge.svg)
+
+<p>Obtain Land Elevation data using USGS LIDAR.
+AgriTech is a python module that domain experts and data scientists can use to fetch, visualise, and transform publicly available satellite and LIDAR data.</p>
+  
+###  Built With
+
+Resoures that used in this project are :
+* PDAL
+* GDAL
+* OGR
+* Shapely
+... amongst others
 
 ### Installation
 ```cli
@@ -16,16 +28,20 @@ pip -r requirements.txt
 * [metadata.csv](../main/metadata.csv) : table  of region name, url to data on amazon bucket, bounds.
 * [read_file.json](../main/read_file.json) :pipeline skeleton json file
 * [GetBounds](../main/GetBounds.py)
-> This script contains a class that can obtain the bounds to a region, link to the region point cloud data from a file of region names.
+  <p> This script contains a class that can obtain the bounds to a region, link to the region point cloud data from a file of region names.</p>
+
 * [ReadData](ReadData.py)
-> This script contains functions to  generate pipeline from give data, run pipeline to obtain tiff file,generate shape file and  generate dimensions geopandas dataframe 
+  <p>This script contains functions to  generate pipeline from give data, run pipeline to obtain tiff file,generate shape file and  generate dimensions geopandas     dataframe </p>
+  
 * [UpdateMetaData](ReadData.py)
-> This script contains functions to  generate pipeline from give data, run pipeline to obtain tiff file,generate shape file and  generate dimensions geopandas dataframe 
+  <p> This script contains functions to  generate pipeline from give data, run pipeline to obtain tiff file,generate shape file and  generate dimensions geopandas     dataframe </p>
+  
 * [GetDimensions](../main/GetDimension.py)
-> This script contains a class with attributes to validate bounds, create and run pipeline, generate shape file and dimension geopandas
-> The attributes need to be followed step wise [see example](../main/notebooks/GetDimension.ipynb) 
+  <p> This script contains a class with attributes to validate bounds, create and run pipeline, generate shape file and dimension geopandas. </p>
+  <p> The attributes need to be followed step wise. <a href="https://github.com/Theehawau/AgriTech/blob/main/notebooks/GetDimension.ipynb">See example.</a></p>
+  
 * [Visualize](../main/visualize.py)
-> This script contains functions for visualizing the data
+  <p> This script contains functions for visualizing the data </p>
 
 ### Usage
 #### Get Bounds
@@ -50,3 +66,7 @@ heatmap('shp/iowa.shp')
 ```
 Other Usage samples and examples can be found in [notebooks](../main/notebooks)
 
+
+
+[issues-shield]: https://img.shields.io/github/issues/Theehawau/AgriTech.svg?style=for-the-badge
+[issues-url]: https://github.com/Theehawau/AgriTech/issues
