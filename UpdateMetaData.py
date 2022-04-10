@@ -18,4 +18,5 @@ db['region'] = db[['region']].applymap(lambda x: x.replace('/',''), na_action='i
 
 db.rename(columns={'location':'url'}, inplace=True)
 
+#save data to data.csv
 db.to_csv('data.csv',index=False)
