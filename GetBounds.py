@@ -14,6 +14,7 @@ class get_bounds_region:
         """ 
         This functions creates a list of dict in the format:
         [{'region':'','location':''},...]
+        location: AWS bucket url
         """
         print('Getting location to region names...')
         with open (self.regions_path, encoding="utf-8") as f:
