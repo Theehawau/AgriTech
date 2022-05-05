@@ -36,11 +36,11 @@ pip -r requirements.txt
 * [UpdateMetaData](ReadData.py)
   <p> This script contains functions to  generate pipeline from give data, run pipeline to obtain tiff file,generate shape file and  generate dimensions geopandas     dataframe </p>
   
-* [GetDimensions](../main/GetDimension.py)
+* [GetDimensions](../blob/main/GetDimension.py)
   <p> This script contains a class with attributes to validate bounds, create and run pipeline, generate shape file and dimension geopandas. </p>
   <p> The attributes need to be followed step wise. <a href="https://github.com/Theehawau/AgriTech/blob/main/notebooks/GetDimension.ipynb">See example.</a></p>
   
-* [Visualize](../main/visualize.py)
+* [Visualize](https://github.com/Theehawau/AgriTech/blob/main/Visualize.py)
   <p> This script contains functions for visualizing the data </p>
 
 ### Usage
